@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
-
+        worldSpeed = 10;
     }
 
     void Update () {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RandomSpawn : MonoBehaviour {
 
+    private PlayerController pc;
+
     public GameObject[] obstacles;
 
     private float InstantiationTimer;
@@ -16,7 +18,9 @@ public class RandomSpawn : MonoBehaviour {
     private Vector3 startPos;
 
     void Start () {
+        pc = FindObjectOfType<PlayerController>();
         startPos = transform.position;
+        maxTime = 1;
     }
 	
 	void Update () {
@@ -27,7 +31,10 @@ public class RandomSpawn : MonoBehaviour {
         v.x += delta * Mathf.Sin(Time.time * speed);
         transform.position = v;
 
-        CreatePrefab();
+        if (pc.isActive)
+        {
+            CreatePrefab();
+        }
     }
 
     void CreatePrefab()
