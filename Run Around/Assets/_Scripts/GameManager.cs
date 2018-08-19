@@ -17,10 +17,15 @@ public class GameManager : MonoBehaviour {
         worldSpeed = 10;
     }
 
-    void Update () {
-
+    private void FixedUpdate()
+    {
         // World rotation
         world.transform.Rotate(0, 0, worldSpeed * Time.deltaTime);
+    }
+
+    void Update () {
+
+
 
         timeLeft += Time.deltaTime;
 

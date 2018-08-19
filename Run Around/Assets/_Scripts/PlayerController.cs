@@ -14,22 +14,17 @@ public class PlayerController : MonoBehaviour {
 
     public bool isActive;
 
-    private void Awake()
-    {
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
         gameManager = FindObjectOfType<GameManager>();
-    }
-
-    void Start () {
-
 
         isActive = true;
         rb.simulated = true;
 	}
 	
-	void Update () {
+	void FixedUpdate () {
 
         if (isActive)
         {

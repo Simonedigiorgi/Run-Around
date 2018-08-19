@@ -20,7 +20,7 @@ public class RandomSpawn : MonoBehaviour {
     void Start () {
         pc = FindObjectOfType<PlayerController>();
         startPos = transform.position;
-        maxTime = 1;
+        //maxTime = 1;
     }
 	
 	void Update () {

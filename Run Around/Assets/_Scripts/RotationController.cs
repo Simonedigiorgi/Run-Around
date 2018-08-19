@@ -7,8 +7,8 @@ public class RotationController : MonoBehaviour
     private GameObject target;
 
     private float randomize;
-    public float minRotation = 500f;
-    public float maxRotation = 900f;
+    [HideInInspector] public float minRotation = 10f;
+    [HideInInspector] public float maxRotation = 100f;
 
     private Vector3 zAxis = new Vector3(0, 0, 2);
 
@@ -30,13 +30,8 @@ public class RotationController : MonoBehaviour
     {
         // Rotate around a target (Gravity)
         transform.RotateAround(target.transform.position, zAxis, speed);
-    }
 
-    private void Update()
-    {
         // Rotate around itself
         transform.Rotate(Vector3.forward * randomize * Time.deltaTime);
-
-
     }
 }
