@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 
         if (isActive)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetMouseButton(0))
             {
                     // Fly up
                     rb.AddForce(Vector2.up * speed * Time.deltaTime);
